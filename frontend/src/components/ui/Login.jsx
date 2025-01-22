@@ -24,7 +24,7 @@ e.preventDefault();
 console.log(input);
 try {
 
- const res=await axios.post("http://localhost:8000/api/v1/user/login",input,{
+ const res=await axios.post("https://fullstack-instaclone.onrender.com/api/v1/user/login",input,{
     headers:{
         'Content-Type':'application/json'
     },

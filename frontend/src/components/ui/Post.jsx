@@ -32,7 +32,7 @@ const Post = ({ post }) => {
   const deletePostHandler = async () => {
     try {
       const res = await axios.delete(
-        `http://localhost:8000/api/v1/post/delete/${post?._id}`,
+        `https://fullstack-instaclone.onrender.com/api/v1/post/delete/${post?._id}`,
         { withCredentials: true }
       );
       if (res.data.success) {
@@ -50,7 +50,7 @@ const Post = ({ post }) => {
     try {
       const action = liked ? "dislike" : "like";
       const res = await axios.get(
-        `http://localhost:8000/api/v1/post/${action}/${post._id}`,
+        `https://fullstack-instaclone.onrender.com/api/v1/post/${action}/${post._id}`,
         { withCredentials: true }
       );
       if (res.data.success) {
@@ -77,7 +77,7 @@ setLiked(!liked);
   };
   const commentHandler=async()=>{
 try {
-  const res=await axios.post(`http://localhost:8000/api/v1/post/${post._id}/comment`,{text},{
+  const res=await axios.post(`https://fullstack-instaclone.onrender.com/api/v1/post/${post._id}/comment`,{text},{
     headers:{
       'Content-Type':'application/json' 
     },
@@ -99,7 +99,7 @@ dispatch(setPosts(updatedPostData));
   const bookMarkHandler=async()=>{
     
     try {
-   const res=await axios.get(`http://localhost:8000/api/v1/post/${post._id}/bookmark`,{withCredentials:true})   
+   const res=await axios.get(`https://fullstack-instaclone.onrender.com/api/v1/post/${post._id}/bookmark`,{withCredentials:true})   
    if(res.data.success){
     console.log("bookmark clicked")
     toast.success(res.data.message);
